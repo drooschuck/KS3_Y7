@@ -1,2 +1,2 @@
 IQuiz-App-Vanila-JS
-[Live link](https://ks3-y9.netlify.app/)
+[Live link](https://ks3-y7.netlify.app/)
