@@ -16,6 +16,22 @@ const timeCount = document.querySelector(".timer .timer_sec");
 // if startQuiz button clicked
 start_btn.onclick = ()=>{
     info_box.classList.add("activeInfo"); //show info box
+    
+    //bbox
+    document.querySelector('.start_btn button').addEventListener('click', function() {
+    const userName = document.getElementById('username').value;
+    if (userName) {
+        // Hide the welcome message and show the quiz
+        document.querySelector('.welcome_message').style.display = 'none';
+        document.querySelector('.quiz_box').style.display = 'block';
+        
+        // Store the user's name for later use
+        localStorage.setItem('userName', userName);
+    } else {
+        alert('Please enter your name to start the quiz.');
+    }
+});
+    //bbox
 }
 
 // if exitQuiz button clicked
@@ -158,6 +174,11 @@ function showResult(){
     quiz_box.classList.remove("activeQuiz"); //hide quiz box
     result_box.classList.add("activeResult"); //show result box
     const scoreText = result_box.querySelector(".score_text");
+
+    //bbox
+    const userName = localStorage.getItem('userName');
+    document.getElementById('user_name').textContent = userName; // Display the user's name
+    //bbox
     if (userScore > 3){ // if user scored more than 3
         //creating a new span tag and passing the user score number and total question number
         let scoreTag = '<span>and congrats! 🎉, You got <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
