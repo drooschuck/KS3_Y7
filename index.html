@@ -1,28 +1,24 @@
+<!-- Created By Droos Chuck  -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="DC / IT Consultancy " />
-    <meta property="og:title" content="Droos Chunk | DC" />
+    <meta property="og:title" content="Droos Chunks | DC" />
     <meta property="og:description" content="Droos Chuck" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.drooschuck.net/" />
 
-    <title>Year 7 Quiz App | Droos Chuck</title>
+    <title>Year 9 Quiz App | Droos Chuck</title>
     <link rel="stylesheet" href="style.css">
+    <!-- FontAweome CDN Link for Icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 </head>
 <body>
-    <!-- Welcome Message -->
-    <div class="welcome_message">
-        <h1>Welcome to Year 7 Quiz</h1>
-        <label for="username">Enter Your Name:</label>
-        <input type="text" id="username" placeholder="Your Name">
-    </div>
-
-    <!-- Start Quiz button -->
-    <div class="start_btn"><button>Start Quiz</button></div> 
+    <!-- start Quiz button -->
+    <div class="start_btn"><button>Start Quiz</button></div>
 
     <!-- Info Box -->
     <div class="info_box">
@@ -73,19 +69,20 @@
         <div class="icon">
             <i class="fas fa-crown"></i>
         </div>
-        <div class="score_text">
-        <span id="user_name"></span> <!-- This is where the username will be displayed -->
-        <!-- Here I've inserted Score Result from JavaScript -->
-        </div>
         <div class="complete_text">You've completed the Quiz!</div>
-        
+        <div class="score_text">
+            <!-- Here I've inserted Score Result from JavaScript -->
+        </div>
         <div class="buttons">
             <button class="restart">Replay Quiz</button>
             <button class="quit">Quit Quiz</button>
         </div>
     </div>
 
+    <!-- Inside this JavaScript file I've inserted Questions and Options only -->
     <script type="module" src="data/questions.js"></script>
+
+    <!-- Inside this JavaScript file I've coded all Quiz Codes -->
     <script type="module" src="js/script.js"></script>
 
 </body>
