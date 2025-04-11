@@ -12,6 +12,14 @@ const option_list = document.querySelector(".option_list");
 const time_line = document.querySelector("header .time_line");
 const timeText = document.querySelector(".timer .time_left_txt");
 const timeCount = document.querySelector(".timer .timer_sec");
+const usernameInput = document.getElementById('username');
+const startButton = document.querySelector('.start_btn button');
+
+startButton.addEventListener('click', () => {
+    const userName = usernameInput.value; // Get the value from the input
+    localStorage.setItem('userName', userName); // Store it in localStorage
+    // Proceed to start the quiz
+});
 
 // if startQuiz button clicked
 start_btn.onclick = ()=>{
@@ -168,18 +176,6 @@ function optionSelected(answer){
     }
     next_btn.classList.add("show"); //show the next button if user selected any option
 }
-
-// bbai
-const usernameInput = document.getElementById('username');
-const startButton = document.querySelector('.start_btn button');
-
-startButton.addEventListener('click', () => {
-    const userName = usernameInput.value; // Get the value from the input
-    localStorage.setItem('userName', userName); // Store it in localStorage
-    // Proceed to start the quiz
-});
-
-//bbai 
 
 function showResult() {
     info_box.classList.remove("activeInfo"); // Hide info box
