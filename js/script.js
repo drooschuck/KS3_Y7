@@ -169,31 +169,46 @@ function optionSelected(answer){
     next_btn.classList.add("show"); //show the next button if user selected any option
 }
 
-function showResult(){
-    info_box.classList.remove("activeInfo"); //hide info box
-    quiz_box.classList.remove("activeQuiz"); //hide quiz box
-    result_box.classList.add("activeResult"); //show result box
+// bbai
+const usernameInput = document.getElementById('username');
+const startButton = document.querySelector('.start_btn button');
+
+startButton.addEventListener('click', () => {
+    const userName = usernameInput.value; // Get the value from the input
+    localStorage.setItem('userName', userName); // Store it in localStorage
+    // Proceed to start the quiz
+});
+
+//bbai 
+
+function showResult() {
+    info_box.classList.remove("activeInfo"); // Hide info box
+    quiz_box.classList.remove("activeQuiz"); // Hide quiz box
+    result_box.classList.add("activeResult"); // Show result box
     const scoreText = result_box.querySelector(".score_text");
 
-    //bbox
+    // Retrieve the username from localStorage
     const userName = localStorage.getItem('userName');
-    document.getElementById('user_name').textContent = userName; // Display the user's name
-    //bbox
-    if (userScore > 3){ // if user scored more than 3
-        //creating a new span tag and passing the user score number and total question number
-        let scoreTag = '<span>and congrats! 🎉, You got <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
-        scoreText.innerHTML = scoreTag;  //adding new span tag inside score_Text
+    
+    // Check if userName is not null or undefined
+    if (userName) {
+        document.getElementById('user_name').textContent = userName; // Display the user's name
+    } else {
+        document.getElementById('user_name').textContent = "Guest"; // Fallback if no username is found
     }
-    else if(userScore > 1){ // if user scored more than 1
-        let scoreTag = '<span>and nice 😎, You got <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
+
+    // Display the score based on userScore
+    if (userScore > 3) { // if user scored more than 3
+        let scoreTag = '<span>and congrats! 🎉, You got <p>' + userScore + '</p> out of <p>' + questions.length + '</p></span>';
+        scoreText.innerHTML = scoreTag; // Adding new span tag inside score_Text
+    } else if (userScore > 1) { // if user scored more than 1
+        let scoreTag = '<span>and nice 😎, You got <p>' + userScore + '</p> out of <p>' + questions.length + '</p></span>';
         scoreText.innerHTML = scoreTag;
-    }
-    else{ // if user scored less than 1
-        let scoreTag = '<span>and sorry 😐, You got only <p>'+ userScore +'</p> out of <p>'+ questions.length +'</p></span>';
+    } else { // if user scored less than 1
+        let scoreTag = '<span>and sorry 😐, You got only <p>' + userScore + '</p> out of <p>' + questions.length + '</p></span>';
         scoreText.innerHTML = scoreTag;
     }
 }
-
 function startTimer(time){
     counter = setInterval(timer, 1000);
     function timer(){
