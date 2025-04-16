@@ -123,7 +123,7 @@ let questions = [
   {
     numb: 12,
     question: "What is the unit of force in the International System of Units (SI)?",
-    answer: " The unit of force is the Newton (N).",
+    answer: "Newton (N).",
     options: [
       "Pound (lb)",
       "Kilogram (kg)",
@@ -134,7 +134,7 @@ let questions = [
   {
     numb: 13,
     question: "What is inertia?",
-    answer: "Inertia is the tendency of an object to resist changes in its state of motion.",
+    answer: "The tendency of an object to resist changes in its state of motion.",
     options: [
       "The force that causes motion",
       "The tendency of an object to resist changes in its state of motion.",
