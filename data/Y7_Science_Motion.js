@@ -35,7 +35,7 @@ let questions = [
   {
     numb: 4,
     question: "What is relative motion?",
-    answer: "Relative motion is the calculation of the motion of an object with respect to another object.",
+    answer: "The calculation of the motion of an object with respect to another object.",
     options: [
       "Motion of an object in a straight line",
       "The calculation of the motion of an object with respect to another object.",
@@ -127,7 +127,7 @@ let questions = [
     options: [
       "Pound (lb)",
       "Kilogram (kg)",
-      "Newton (N)",
+      "Newton (N).",
       "Joule (J)"
     ]
   },
